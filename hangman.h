@@ -6,7 +6,7 @@
 #include<string>
 #include<fstream>
 #include<cctype>
-#include<windows.h>
+#include<unistd.h>
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
@@ -26,7 +26,7 @@ short to_lower(string & pass);
 string cover(const string pass);
 void ranked();
 void hot_seat();
-short gameplay(const string pass, string covered, short spaces);
+short int gameplay(const string pass, string covered, short spaces);
 void bubble_sort();//sortuje ranking
 void update();//aktualizuje punkty gracza
 int Search(const char *nick);//zwraca nr linijki na ktorej jest nazwa danego gracza

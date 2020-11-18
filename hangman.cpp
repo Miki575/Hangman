@@ -13,7 +13,7 @@ type_of_game show_menu()
     cin>>choice;
     while(!(choice=='1' || choice=='2'))//wczytuj znaki, dopoki nie zostanie podane 1 lub 2
         cin>>choice;
-    system("cls");
+    system("clear");
     if(choice=='1')//Gra rankingowa
     {
         string temp;
@@ -113,7 +113,7 @@ string cover(const string pass)//zakrywanie hasla gwiazdkami
     return covered;
 }
 
-void bubble_sort(/*tu powinna zostać przekazane jakies parametry, bo póki co f-cja dziala tylko dla jednego pliku tekstowego)
+void bubble_sort() //tu powinna zostać przekazane jakies parametry, bo póki co f-cja dziala tylko dla jednego pliku tekstowego)
 {
     using namespace std;
 
@@ -182,7 +182,7 @@ void bubble_sort(/*tu powinna zostać przekazane jakies parametry, bo póki co f
     delete [] points;
 }
 
-short gameplay(const string pass, string covered, short spaces)
+short int gameplay(const string pass, string covered, short spaces)
 {
     using std::cout;
     using std::cin;
@@ -225,8 +225,8 @@ short gameplay(const string pass, string covered, short spaces)
         else
             cout<<"Brawo brawo brawissimo!\n";
         j++;
-        Sleep(500);
-        system("cls");
+        usleep(500);
+        system("clear");
     }
     return attempts;
 }
@@ -234,7 +234,7 @@ short gameplay(const string pass, string covered, short spaces)
 void ranked()
 {
     using std::cout;
-    //system("cls");
+    //system("clear");
 
     //1. Losowanie hasla z pliku
     std::string temp;
@@ -272,6 +272,7 @@ void ranked()
     else
         cout<<"Niestety nie udalo sie. \n\t\t\t\t***GAME OVER***\n";
     current.points+=punkty;
+    cout<<current.points<<std::endl;
 
     file.close();
 }
@@ -280,12 +281,12 @@ void hot_seat()
 {
     using std::cout;
     using std::cin;
-    system("cls");
+    system("clear");
     cin.get();
     cout<<"Podaj haslo ktore Twoj przeciwnik ma zgadnac: ";
     string haslo;
     getline(cin, haslo);//wcytanie hasla podanego przez przeciwnika
-    system("cls");
+    system("clear");
     short spacje=to_lower(haslo);
     string zakryte=cover(haslo);
     int punkty=gameplay(haslo, zakryte, spacje);
