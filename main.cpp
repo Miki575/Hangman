@@ -1,4 +1,4 @@
-#include"hangman.h"
+#include "hangman.h" 
 
 player current;
 
