@@ -2,6 +2,7 @@
 #define PLAYER_H_
 
 #include<string>
+#include<iostream>
 
 class player {
     private:
@@ -12,7 +13,8 @@ class player {
     player();
     player(std::string m_name, long m_points);
     ~player();
-        
-}
+    short ranked_game(); //returns gained points
+    void hotseat_game();    
+};
 
 #endif //PLAYER_H_
