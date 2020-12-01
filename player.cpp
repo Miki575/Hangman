@@ -1,4 +1,5 @@
 #include "player.h"
+#include "rankingDB.h"
 
 
 player::player() {
@@ -15,9 +16,11 @@ player::player(std::string m_name, long m_points) {
 }
 
 short player::ranked_game() {
+    
 
+    return 0;
 }
 
 void player::hotseat_game() {
-
+    
 }

@@ -11,14 +11,17 @@ RM = rm -f
 #create executable
 all : HangmanGame
 
-HangmanGame : player.o main.o
-	$(CXX) $(CXXFLAGS) -o HangmanGame player.o main.o
+HangmanGame : main.o player.o rankingDB.o
+	$(CXX) $(CXXFLAGS) -o HangmanGame player.o main.o rankingDB.o
 
 main.o : main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp
 
 player.o : player.cpp player.h
 	$(CXX) $(CXXFLAGS) -c player.cpp
+
+rankingDB.o : rankingDB.cpp rankingDB.h
+	$(CXX) $(CXXFLAGS) -c rankingDB.cpp
 
 #clean object files
 clean :
