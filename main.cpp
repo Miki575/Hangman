@@ -1,6 +1,7 @@
 #include<iostream>
 
-using std::cout, std::cin;
+using std::cout; 
+using std::cin;
 
 
 int main() {
