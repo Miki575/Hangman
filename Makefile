@@ -15,7 +15,7 @@ HangmanGame : main.o player.o rankingDB.o
 	$(CXX) $(CXXFLAGS) -o HangmanGame player.o main.o rankingDB.o -lmysqlcppconn
 
 main.o : main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp -I/usr/include/mysql-cppconn-8/jdbc/
 
 player.o : player.cpp player.h
 	$(CXX) $(CXXFLAGS) -c player.cpp -I/usr/include/mysql-cppconn-8/jdbc/

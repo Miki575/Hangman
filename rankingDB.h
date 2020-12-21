@@ -20,9 +20,9 @@ class rankingDB {
     sql::Driver *driver;
     sql::Connection *con;
 
-    bool addplayerDB() const;
-    bool remplayerDB() const;
-    bool connectDB();
+    bool addplayerDB(std::string m_nick) const; //add new player to DB
+    //bool remplayerDB() const;
+    bool connectDB();                           //connect to SQL DB
     
 
     public:
@@ -30,8 +30,7 @@ class rankingDB {
     ~rankingDB();
     bool updateDB() const;
     bool listplayerDB(std::string m_nick) const;
-    short CheckPlayerDB(player m_user) const; //returns SQL info about location of this player
-
+    short CheckPlayerDB(std::string m_nick) const; //check player existance in DB
 };
 
 #endif  //rankingDB_H_
