@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <iostream>
+#include <iomanip>
 
 //#include "mysql_connection.h"
 #include <cppconn/driver.h>
@@ -13,12 +14,12 @@
 
 class rankingDB {
     private:
-    std::string SQLserver;
-    std::string SQLuser;
-    std::string SQLpass;
+    std::string m_SQLserver;
+    std::string m_SQLuser;
+    std::string m_SQLpass;
 
-    sql::Driver *driver;
-    sql::Connection *con;
+    sql::Driver *m_driver;
+    sql::Connection *m_con;
 
     bool addplayerDB(std::string m_nick) const; //add new player to DB
     //bool remplayerDB() const;
@@ -27,10 +28,11 @@ class rankingDB {
 
     public:
     rankingDB();
+    rankingDB(std::string SQLserver, std::string SQLuser, std::string SQLpass);
     ~rankingDB();
-    bool updateDB() const;
-    bool listplayerDB(std::string m_nick) const;
-    short CheckPlayerDB(std::string m_nick) const; //check player existance in DB
+    bool updateDB(const std::string m_nick, const long m_points) const;
+    bool listplayersDB(const std::string m_nick = "none") const;  //list all players
+    short CheckPlayerDB(const std::string m_nick) const; //check player existance in DB
 };
 
 #endif  //rankingDB_H_
