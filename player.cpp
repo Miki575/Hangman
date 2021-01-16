@@ -15,6 +15,10 @@ player::player(std::string m_name, long m_points) {
     points = m_points;
 }
 
+player::~player() {
+    
+}
+
 short player::ranked_game() {
     
 

@@ -13,6 +13,8 @@ class player {
     player();
     player(std::string m_name, long m_points);
     ~player();
+    std::string getName() const {return name;}
+    long getPoints() const {return points; }
     short ranked_game(); //returns gained points
     void hotseat_game();    
 };
