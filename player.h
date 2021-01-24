@@ -8,7 +8,7 @@ class player {
     private:
     std::string name;
     long int points;
-    short int gameplay(const std::string pass, std::string covered, short spaces)
+    short int gameplay(const std::string pass, std::string covered, short spaces);
 
 
     public:
