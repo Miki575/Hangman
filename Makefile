@@ -11,8 +11,8 @@ RM = rm -f
 #create executable
 all : HangmanGame
 
-HangmanGame : main.o player.o rankingDB.o
-	$(CXX) $(CXXFLAGS) -o HangmanGame player.o main.o rankingDB.o -lmysqlcppconn
+HangmanGame : main.o player.o rankingDB.o clue.o
+	$(CXX) $(CXXFLAGS) -o HangmanGame player.o main.o rankingDB.o clue.o -lmysqlcppconn
 
 main.o : main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -I/usr/include/mysql-cppconn-8/jdbc/
@@ -22,6 +22,9 @@ player.o : player.cpp player.h
 
 rankingDB.o : rankingDB.cpp rankingDB.h
 	$(CXX) $(CXXFLAGS) -c rankingDB.cpp -I/usr/include/mysql-cppconn-8/jdbc/
+
+clue.o : clue.cpp clue.h 
+	$(CXX) $(CXXFLAGS) -c clue.cpp 
 
 #clean object files
 clean :

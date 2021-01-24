@@ -5,8 +5,9 @@
 
 class clue {
     private:
-    std::string org_clue;
+    std::string org_clue;                               //has to be in low letters
     std::string covered_clue;
+    short len;
     void hide();                                        //replace letters with *
 
 
