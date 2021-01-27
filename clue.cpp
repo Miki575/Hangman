@@ -28,17 +28,18 @@ void clue::hide() {
 
 bool clue::checkChar(char guess) {
 
+    bool found = false;
     guess = tolower(guess);
     for (int i = 0; i < len; i++) {
 
         if (org_clue[i] == guess) {
             covered_clue[i] = guess;
-            return true;
+            found = true;
         }
         else {
             continue;
         }
     }
 
-    return false;
+    return found;
 } 
