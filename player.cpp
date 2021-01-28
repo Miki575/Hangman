@@ -4,15 +4,15 @@
 
 player::player() {
     std::cout<<"Enter your nick: ";
-    getline(std::cin, name);
-    points = 0;
+    getline(std::cin, m_name);
+    m_points = 0;
     std::cout<<"You've been added to ranking\n";
     std::cout<<"Enjoy!\n";
 }
 
-player::player(std::string m_name, long m_points) {
-    name = m_name;
-    points = m_points;
+player::player(std::string name, long points) {
+    m_name = name;
+    m_points = points;
 }
 
 player::~player() {
