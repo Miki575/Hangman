@@ -16,7 +16,7 @@ void clue::hide() {
 
     m_covered_clue = m_org_clue;
 
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < m_len; i++) {
 
         if (m_covered_clue[i] == ' ') 
             continue;
@@ -30,7 +30,7 @@ bool clue::checkChar(char guess) {
 
     bool found = false;
     guess = tolower(guess);
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < m_len; i++) {
 
         if (m_org_clue[i] == guess) {
             m_covered_clue[i] = guess;

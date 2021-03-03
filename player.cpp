@@ -28,10 +28,10 @@ short player::ranked_game() {
 void player::hotseat_game() {
     
 }
-
+/*
 short int gameplay(const string pass, string covered, short spaces)
 {
-    /*
+    
     1. Inicjalizacja obiektu typu clue- wylosowanym haslem z tabeli SQL 
     2. Przygowanie hasla- zasloniecie * i zmiania wielkosic if necessary
     3. Zgadywanie hasla
@@ -39,7 +39,7 @@ short int gameplay(const string pass, string covered, short spaces)
         b) sprawdzenie czy wpisana litera jest w hasle i ewentualna podmiana
         c) aktualizacja liczby prob
     [4.] przekazanie liczby punktow 
-    */
+    
 
 
 
@@ -89,4 +89,4 @@ short int gameplay(const string pass, string covered, short spaces)
         system("clear");
     }
     return attempts;
-}
+}*/
