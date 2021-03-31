@@ -43,3 +43,11 @@ rc clue::checkChar(char guess) {
 
     return found;
 } 
+
+void clue::showClue() const {
+    
+    usleep(500);
+    system("clear");
+    std::cout<<"\t\t"<<m_covered_clue<<"\n\n";
+
+}

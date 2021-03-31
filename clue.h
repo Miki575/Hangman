@@ -2,7 +2,7 @@
 #define CLUE_H_
 
 #include<string>
-
+#include<unistd.h>
 enum rc {yes, no, done};
 
 class clue {
@@ -19,6 +19,7 @@ class clue {
     ~clue();
     rc checkChar(char guess);                         //check if letter occurs in clue and replace it
     short getSize() {return m_len;}
+    void showClue() const;
 
 };
 
