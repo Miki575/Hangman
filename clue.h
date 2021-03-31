@@ -3,6 +3,8 @@
 
 #include<string>
 
+enum rc {yes, no, done};
+
 class clue {
     private:
     std::string m_org_clue;                               //has to be in low letters
@@ -15,7 +17,8 @@ class clue {
     public:
     clue(std::string org_clue);                       //will be initialized with clue from SQL table
     ~clue();
-    bool checkChar(char guess);                         //check if letter occurs in clue and replace it
+    rc checkChar(char guess);                         //check if letter occurs in clue and replace it
+    short getSize() {return m_len;}
 
 };
 

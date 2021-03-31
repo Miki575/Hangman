@@ -26,15 +26,15 @@ void clue::hide() {
     
 } 
 
-bool clue::checkChar(char guess) {
+rc clue::checkChar(char guess) {
 
-    bool found = false;
+    rc found = no;
     guess = tolower(guess);
     for (int i = 0; i < m_len; i++) {
 
         if (m_org_clue[i] == guess) {
             m_covered_clue[i] = guess;
-            found = true;
+            found = (m_covered_clue == m_org_clue) ? done : yes;
         }
         else {
             continue;
