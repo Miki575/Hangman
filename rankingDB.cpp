@@ -133,7 +133,7 @@ clueDB::~clueDB() {
 
 }
 
-std::string clueDB::randomClueDB() {
+std::string clueDB::randomClueDB() const {
 
     sql::PreparedStatement *pstm;
     sql::ResultSet *res;
@@ -180,7 +180,7 @@ bool clueDB::addClueDB(const std::string & candidate_clue) {
     }
     delete pstm;
 
-    return true; //there should be implemented condition if SQL read/write suceed    
+    return true; //there should be implemented condition if SQL read/write succeed    
 }
 
 bool clueDB::remClueDB(const std::string & candidate_clue) {

@@ -10,7 +10,6 @@
 #include <cppconn/exception.h>
 #include <cppconn/prepared_statement.h>
 
-#include "player.h"
 
 class DB {
     private:
@@ -54,10 +53,10 @@ class clueDB : public DB {
     std::string m_SQLtable;
 
     public:
-    clueDB(const std::string & SQLserver = "tcp://localhost:3306", const std::string & SQLuser = "root", const std::string & SQLpass = "", const std::string & SQLschema = "Hangman", 
-    const std::string & SQLtable = "clues");
+    clueDB(const std::string & SQLserver = "tcp://localhost:3306", const std::string & SQLuser = "root", 
+    const std::string & SQLpass = "", const std::string & SQLschema = "Hangman", const std::string & SQLtable = "clues");
     ~clueDB();
-    std::string randomClueDB();
+    std::string randomClueDB() const;
     bool addClueDB(const std::string & candidate_clue);
     bool remClueDB(const std::string & candidate_clue);
 
