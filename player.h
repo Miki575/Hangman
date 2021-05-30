@@ -3,12 +3,18 @@
 
 #include<string>
 #include<iostream>
+#include<memory>
+#include<vector>
+#include<algorithm>
+
+#include "rankingDB.h"
+#include "clue.h"
 
 class player {
     private:
     std::string m_name;
     long int m_points;
-    short int gameplay(const std::string pass, std::string covered, short spaces);
+    void gameplay(const clueDB &clueBase);
 
 
     public:
@@ -16,7 +22,7 @@ class player {
     player(std::string name, long points);
     ~player();
     std::string getName() const {return m_name;}
-    long getPoints() const {return m_points; }
+    long getPoints() const {return m_points;}
     short ranked_game(); //returns gained points
     void hotseat_game();    
 };

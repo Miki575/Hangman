@@ -1,5 +1,4 @@
 #include "player.h"
-#include "rankingDB.h"
 
 
 player::player() {
@@ -28,10 +27,13 @@ short player::ranked_game() {
 void player::hotseat_game() {
     
 }
-/*
-short int gameplay(const string pass, string covered, short spaces)
+
+void player::gameplay(const clueDB &clueBase)
 {
-    
+    using std::cout;
+    using std::cin;
+
+    /*
     1. Inicjalizacja obiektu typu clue- wylosowanym haslem z tabeli SQL 
     2. Przygowanie hasla- zasloniecie * i zmiania wielkosic if necessary
     3. Zgadywanie hasla
@@ -39,54 +41,44 @@ short int gameplay(const string pass, string covered, short spaces)
         b) sprawdzenie czy wpisana litera jest w hasle i ewentualna podmiana
         c) aktualizacja liczby prob
     [4.] przekazanie liczby punktow 
-    
+    */
 
-
-
-
-    using std::cout;
-    using std::cin;
-
-    short letters=pass.size();
-    short attempts=letters-spaces;//tyle prob ile liter
     char guess;
-    char used[30]= {0}; //tablica na zuzyte litery
-    int j=0;
-    cout<<"Zaczynamy. Powodzenia!\n";
-    while(covered != pass)
+    std::vector<char> used;
+    rc guess_status;   
+    //preparation
+    clue current(clueBase.randomClueDB());
+    short attempts = current.getSize();
+
+    cout<<"Here we go!\n";
+    do 
     {
-        cout<<"Pozostalo Ci "<<attempts<<" prob\t\tUzyte litery: ";
-        for(int i=0; i<j && j>0; i++)//wypisywanie zuzytych liter
-            cout<<used[i]<<", ";
-        cout<<"\n\t"<<covered<<std::endl;
-        cout<<"Podaj litere: ";
+        current.showClue();
+        cout<<"Enter your guess: ";
         cin>>guess;
-        used[j]=guess;
-        int k=0;
-        for(int i=0; i<letters; i++)//sprawdzanie czy dana litera jest w hasle i ewentualna zamiana
-        {
-            if(pass[i]==guess)
-                covered[i]=guess;
-            else if(pass[i]==(char)(guess+32))
-                covered[i]=(char)(guess+32);
-            else
-            {
-                k++;
-                continue;
-            }
+        tolower(guess);
+        if(std::find(used.begin(), used.end(), guess) != used.end()) { //check if this letter wasn't used before
+            cout<<"You are repeating yourself!\n";
+            continue;
+        } 
+        else {
+            used.push_back(guess);
+            guess_status = current.checkChar(guess);
+            if(guess_status == yes) {
+                cout<<"Well done!\n";
+            } else if(guess_status == no){
+                cout<<"No way, Jose!\n"; 
+                attempts--; 
+                if(attempts == 0) {
+                    cout<<"It was your last try \n";
+                    cout<<"GAME OVER\n";
+                    break;
+                }
+            } else //gues_status == done, clue was guessed
+                cout<<"You score "<<attempts<<" point"<<(attempts > 1) ? "s\n" : "\n";
         }
-        if(k==letters)//prawda jesli zadna z liter w hasle nie pokrywa sie ze strzalem, czyli jesli ktos nie trafil
-        {
-            attempts--;//odjecie jednej proby, bo nie trafil
-            cout<<"Nie trafiles!\n";
-            if(attempts==0)//jak nie ma juz zyc to game over
-                break;
-        }
-        else
-            cout<<"Brawo brawo brawissimo!\n";
-        j++;
-        usleep(500);
-        system("clear");
-    }
-    return attempts;
-}*/
+    }while(guess_status != done);
+
+    m_points += attempts;
+
+}
