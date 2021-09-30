@@ -3,6 +3,7 @@
 
 #include<string>
 #include<unistd.h>
+#include<iostream>
 enum rc {yes, no, done};
 
 class clue {

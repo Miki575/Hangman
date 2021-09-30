@@ -36,8 +36,8 @@ class rankingDB : public DB {
     bool addplayerDB(std::string m_nick) const; //add new player to DB
 
     public:
-    rankingDB(std::string SQLserver = "tcp://localhost:3306", std::string SQLuser = "root", std::string SQLpass = "", std::string SQLschema = "Hangman", 
-    std::string SQLtable = "users");
+    rankingDB(std::string SQLserver = "tcp://localhost:3306", std::string SQLuser = "root", 
+    std::string SQLpass = "", std::string SQLschema = "Hangman", std::string SQLtable = "users");
     ~rankingDB();
     bool updateDB(const std::string m_nick, const long m_points) const;
     bool listplayersDB(const std::string m_nick = "none") const;  //list all players

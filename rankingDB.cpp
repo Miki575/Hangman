@@ -122,7 +122,6 @@ bool rankingDB::addplayerDB(std::string m_nick) const {
 
 
 //clueDB class methods
-
 clueDB::clueDB(const std::string & SQLserver, const std::string & SQLuser, const std::string & SQLpass, const std::string & SQLschema, const std::string & SQLtable) 
 : DB (SQLserver, SQLuser, SQLpass, SQLschema) {
 
@@ -147,7 +146,7 @@ std::string clueDB::randomClueDB() const {
     if (res->next())
         random_clue = res->getString("word");
     else
-        std::cout<<"Check Hangman DB, clue table if it is not empty\n";
+        std::cout<<"Check Hangman DB/clue table if it is not empty\n";
         /*
         throw exception
         */
@@ -176,11 +175,11 @@ bool clueDB::addClueDB(const std::string & candidate_clue) {
         pstm->setString(1, m_SQLtable);
         pstm->setInt(2, 0);                      //set valid to 0 if it become 3 it will be approved, if -3 then it will be rejected
         pstm->execute();
-        std::cout<<"Thank you! Your clue candidate will be validate\n";
+        std::cout<<"Thank you! Your clue candidate will be validated\n";
     }
     delete pstm;
 
-    return true; //there should be implemented condition if SQL read/write succeed    
+    return true; //there should be implemented condition if SQL read/write succeed and then return true or false
 }
 
 bool clueDB::remClueDB(const std::string & candidate_clue) {
