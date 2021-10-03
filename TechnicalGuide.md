@@ -1,9 +1,9 @@
 # Table of content
-1. [How to compile project](#Compile)
-2. [Purpose of main classes](#classes)
-3. [Useful links](#links)
-4. 
-# Goal of this project
+1. [Goal of this project](#Goal)
+2. [How to compile project](#Compile)
+3. [Purpose of main classes](#classes)
+4. [Useful links](#links) 
+# Goal of this project <a name="Goal"></a>
 Main goal of this project is to create simple game application with Qt interface and possibility to play via internal network.
 
 # How to compile project <a name="Compile"></a>
