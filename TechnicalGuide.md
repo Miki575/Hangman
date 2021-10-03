@@ -1,14 +1,14 @@
 # Table of content
-1. [How to compile project](# How to compile project)
+1. [How to compile project](#Compile)
 2. [Purpose of main classes](# Purpose of main classes)
 3. [Useful links](# Useful links)
 4. 
 # Goal of this project
 Main goal of this project is to create simple game application with Qt interface and possibility to play via internal network.
 
-# How to compile project
+# How to compile project <a name="Compile"></a>
 ## Using make
-`make all`-creates executable file "HangmanGame"
+`make all`-creates executable file "HangmanGame"  
 `make clean`- deletes all object files created in the previous step
 ## Using gcc commands
 *In progress*
