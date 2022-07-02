@@ -136,8 +136,7 @@ std::string clueDB::randomClueDB() const {
 
     sql::PreparedStatement *pstm;
     sql::ResultSet *res;
-    
-    pstm = m_con->prepareStatement("SELECT * FROM ? ORDER BY RAND() LIMIT 1");
+    pstm = m_con->prepareStatement("SELECT * FROM clues WHERE valid=3 ORDER BY RAND() LIMIT 1");
     pstm->setString(1, m_SQLtable);
     res = pstm->executeQuery();
 

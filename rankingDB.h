@@ -57,8 +57,9 @@ class clueDB : public DB {
     const std::string & SQLpass = "", const std::string & SQLschema = "Hangman", const std::string & SQLtable = "clues");
     ~clueDB();
     std::string randomClueDB() const;
-    bool addClueDB(const std::string & candidate_clue);
-    bool remClueDB(const std::string & candidate_clue);
+    bool addClueDB(const std::string & candidate_clue);//add candidate_clue for futher verification, only clues from hotseat
+    bool remClueDB(const std::string & candidate_clue);//remove candidate_clue if valid == -3
+    bool verClueDB();//ask user to verify candidate_clue and in/decrease valid
 
 };
 

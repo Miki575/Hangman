@@ -15,7 +15,7 @@ class player {
     std::string m_name;
     long int m_points;
     void gameplay(const clueDB &clueBase);
-
+    bool addPlayer(std::string name);
 
     public:
     player();
@@ -23,7 +23,7 @@ class player {
     ~player();
     std::string getName() const {return m_name;}
     long getPoints() const {return m_points;}
-    short ranked_game(); //returns gained points
+    short ranked_game(const clueDB &clueBase); //returns gained points
     void hotseat_game();    
 };
 

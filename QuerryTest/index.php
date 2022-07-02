@@ -28,8 +28,8 @@ if ($ile>=1)
 {
 echo<<<END
 <td width="50" align="center" bgcolor="e5e5e5">id</td>
-<td width="100" align="center" bgcolor="e5e5e5">Nick</td>
-<td width="50" align="center" bgcolor="e5e5e5">Points</td>
+<td width="100" align="center" bgcolor="e5e5e5">word</td>
+<td width="50" align="center" bgcolor="e5e5e5">valid</td>
 </tr><tr>
 END;
 
@@ -51,13 +51,16 @@ END;*/
 		
 		$row = mysqli_fetch_assoc($rezultat);
 		$id = $row['id'];
-		$nick = $row['nick'];
-		$points = $row['points'];
+		$word = $row['word'];
+		$valid = $row['valid'];
+		/*$nick = $row['nick'];
+		$points = $row['points'];*/
+
 
 echo<<<END
 <td width="50" align="center">$id</td>
-<td width="100" align="center">$nick</td>
-<td width="100" align="center">$points</td>
+<td width="100" align="center">$word</td>
+<td width="100" align="center">$valid</td>
 </tr><tr>
 END;
 		/*$tresc = $row['tresc'];

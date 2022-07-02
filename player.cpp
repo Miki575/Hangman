@@ -18,8 +18,9 @@ player::~player() {
     
 }
 
-short player::ranked_game() {
+short player::ranked_game(const clueDB &clueBase) {
     
+    this->gameplay(clueBase);
 
     return 0;
 }
@@ -59,6 +60,7 @@ void player::gameplay(const clueDB &clueBase)
         tolower(guess);
         if(std::find(used.begin(), used.end(), guess) != used.end()) { //check if this letter wasn't used before
             cout<<"You are repeating yourself!\n";
+            usleep(500);
             continue;
         } 
         else {
@@ -66,8 +68,10 @@ void player::gameplay(const clueDB &clueBase)
             guess_status = current.checkChar(guess);
             if(guess_status == yes) {
                 cout<<"Well done!\n";
+                usleep(500);
             } else if(guess_status == no){
-                cout<<"No way, Jose!\n"; 
+                cout<<"No way, Jose!\n";
+                usleep(500); 
                 attempts--; 
                 if(attempts == 0) {
                     cout<<"It was your last try \n";

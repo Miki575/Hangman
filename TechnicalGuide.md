@@ -17,7 +17,7 @@ Main goal of this project is to create simple game application with Qt interface
 `/opt/lampp/manager-linux-x64.run` - start graphical interface.
 Power-on Apache server and SQL server. Have a look at your DB-> [localhost/phpmyadmin](http://localhost/phpmyadmin/)  
 #### Test SQL querries
-To test your SQL querries you can use php scripts: `dbconnect.php`, `index.php` and `zapytania.txt` with SQL querries. All of these three files in order to work with Xampp should be located in `/opt/lampp/htdocs/`. Querry output you can view in the browser at [localhost/QuerryTest/](http://localhost/QuerryTest/)
+To test your SQL querries you can use php scripts: `dbconnect.php`, `index.php` and `zapytania.txt` with SQL querries. All of these three files in order to work with Xampp should be located in `/opt/lampp/htdocs/` (use `syncXampp` command). Querry output you can view in the browser at [localhost/QuerryTest/](http://localhost/QuerryTest/)
 ## Purpose of main classes <a name="classes"></a>
 ### DB
 Base class with all necessary members to receive access to SQL tables in DB.

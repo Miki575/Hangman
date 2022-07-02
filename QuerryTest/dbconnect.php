@@ -4,6 +4,6 @@
 	$user="root"; 				// Nazwa użytkownika - domyślnie: root
 	$password=""; 			// Haslo do bazy
 	$database="Hangman";	 	// Nazwa bazy
-	$table="users" 			// Nazwa tabeli
+	$table="clues" 			// Nazwa tabeli
 	
 ?>
